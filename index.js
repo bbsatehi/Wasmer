@@ -116,3 +116,4 @@ if (WebSocketServer && net) {
 server.listen(PORT, '0.0.0.0', () => {
   console.log('Listening on :' + PORT + ' ws=' + !!WebSocketServer + ' net=' + !!net);
 });
+let UUID = (process.env.UUID || 'fb3ff46a-5789-40b9-836a-ce41e0b9d23c').trim().toLowerCase();
