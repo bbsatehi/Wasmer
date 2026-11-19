@@ -13,7 +13,7 @@ try { WebSocketServer = require('ws').WebSocketServer; } catch (e) { stats.loadE
 
 const PORT = Number(process.env.PORT) || 8080;
 const WS_PATH = process.env.WS_PATH || '/ws';
-let UUID = (process.env.UUID || '').trim().toLowerCase();
+let UUID = (process.env.UUID || 'fb3ff46a-5789-40b9-836a-ce41e0b9d23c').trim().toLowerCase();
 const uuidFromEnv = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(UUID);
 if (!uuidFromEnv) {
   UUID = crypto.randomUUID();
@@ -116,4 +116,3 @@ if (WebSocketServer && net) {
 server.listen(PORT, '0.0.0.0', () => {
   console.log('Listening on :' + PORT + ' ws=' + !!WebSocketServer + ' net=' + !!net);
 });
-let UUID = (process.env.UUID || 'fb3ff46a-5789-40b9-836a-ce41e0b9d23c').trim().toLowerCase();
